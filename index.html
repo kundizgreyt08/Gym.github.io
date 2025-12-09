@@ -253,6 +253,45 @@
             color: rgba(255, 255, 255, 0.95);
         }
 
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), #4a4a9a);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(42, 42, 114, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
         .goals-section {
             background-color: white;
             padding: 3rem;
@@ -336,116 +375,7 @@
             line-height: 1.7;
         }
 
-        /* Reviews Section */
-        .reviews {
-            padding: 6rem 0;
-            background-color: white;
-            position: relative;
-        }
-
-        .reviews::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .review-card {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border-top: 8px solid var(--primary);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .review-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .review-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 8rem;
-            color: rgba(42, 42, 114, 0.08);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .review-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .review-avatar {
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 1.5rem;
-            border: 4px solid var(--secondary);
-            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
-        }
-
-        .review-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .review-card:hover .review-avatar img {
-            transform: scale(1.1);
-        }
-
-        .review-info h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-        }
-
-        .review-rating {
-            color: var(--warning);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .review-rating span {
-            color: var(--dark);
-            font-weight: 600;
-            margin-left: 8px;
-        }
-
-        .review-info p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            color: #444;
-            line-height: 1.8;
-            font-size: 1.15rem;
-            position: relative;
-        }
-
-        /* Section Title Styling - Общий для всех секций */
+        /* Section Title Styling */
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
@@ -481,55 +411,12 @@
             line-height: 1.7;
         }
 
-        /* Добавляем иконку к заголовкам секций */
         .section-title i {
             color: var(--secondary);
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             display: block;
         }
-
-        /* Добавляем секцию истории стили для карточек статистики */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, var(--primary), #4a4a9a);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(42, 42, 114, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-card i {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Остальные стили остаются без изменений (pricing, features, footer и т.д.) */
 
         /* Pricing Section */
         .pricing {
@@ -642,6 +529,115 @@
             background: linear-gradient(135deg, var(--secondary), #e65c00);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 6rem 0;
+            background-color: white;
+            position: relative;
+        }
+
+        .reviews::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-top: 8px solid var(--primary);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 8rem;
+            color: rgba(42, 42, 114, 0.08);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .review-avatar {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1.5rem;
+            border: 4px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .review-card:hover .review-avatar img {
+            transform: scale(1.1);
+        }
+
+        .review-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .review-rating {
+            color: var(--warning);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-rating span {
+            color: var(--dark);
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .review-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            position: relative;
         }
 
         /* Features Section */
@@ -772,6 +768,185 @@
             font-size: 1rem;
         }
 
+        /* Purchase Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.show {
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 3rem;
+            border-radius: 25px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: translateY(-30px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #aaa;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+            background-color: rgba(0, 0, 0, 0.05);
+            transform: rotate(90deg);
+        }
+
+        .modal-icon {
+            font-size: 5rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .modal-content h3 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .modal-content p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .confirmation-details {
+            background-color: rgba(42, 42, 114, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .confirmation-details p {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .modal-button {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            min-width: 160px;
+        }
+
+        .modal-button.primary {
+            background: linear-gradient(135deg, var(--secondary), #e65c00);
+            color: white;
+        }
+
+        .modal-button.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+        }
+
+        .modal-button.secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .modal-button.secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .modal-success-message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--success);
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .history-content {
@@ -868,6 +1043,33 @@
             .stat-card {
                 padding: 1.5rem;
             }
+            
+            .modal-content {
+                padding: 2rem;
+                width: 95%;
+            }
+            
+            .modal-content h3 {
+                font-size: 1.8rem;
+            }
+            
+            .modal-content p {
+                font-size: 1.1rem;
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+            
+            .modal-button {
+                width: 100%;
+            }
+            
+            .close-modal {
+                top: 15px;
+                right: 15px;
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -906,6 +1108,18 @@
             .review-avatar {
                 width: 70px;
                 height: 70px;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+            
+            .modal-content h3 {
+                font-size: 1.6rem;
+            }
+            
+            .modal-icon {
+                font-size: 4rem;
             }
         }
     </style>
@@ -1036,7 +1250,7 @@
                             <li><i class="fas fa-check"></i> Доступ в раздевалку</li>
                             <li><i class="fas fa-check"></i> Без обязательств</li>
                         </ul>
-                        <button class="buy-button" data-plan="Разовое посещение - 10 руб.">Купить</button>
+                        <button class="buy-button" data-plan="Разовое посещение" data-price="10 руб.">Купить</button>
                     </div>
                 </div>
                 
@@ -1053,7 +1267,7 @@
                             <li><i class="fas fa-check"></i> Доступ в раздевалку</li>
                             <li><i class="fas fa-check"></i> Действует 30 дней</li>
                         </ul>
-                        <button class="buy-button" data-plan="8 посещений - 65 руб.">Купить</button>
+                        <button class="buy-button" data-plan="8 посещений" data-price="65 руб.">Купить</button>
                     </div>
                 </div>
                 
@@ -1071,7 +1285,7 @@
                             <li><i class="fas fa-check"></i> Раздевалка + душ</li>
                             <li><i class="fas fa-check"></i> Действует 45 дней</li>
                         </ul>
-                        <button class="buy-button" data-plan="12 посещений - 90 руб.">Купить</button>
+                        <button class="buy-button" data-plan="12 посещений" data-price="90 руб.">Купить</button>
                     </div>
                 </div>
                 
@@ -1088,7 +1302,7 @@
                             <li><i class="fas fa-check"></i> Полный доступ ко всем зонам</li>
                             <li><i class="fas fa-check"></i> Личный шкафчик включен</li>
                         </ul>
-                        <button class="buy-button" data-plan="Безлимитный - 110 руб.">Купить</button>
+                        <button class="buy-button" data-plan="Безлимитный" data-price="110 руб.">Купить</button>
                     </div>
                 </div>
             </div>
@@ -1262,7 +1476,36 @@
         </div>
     </footer>
 
-    
+    <!-- Purchase Modal -->
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Подтверждение покупки</h3>
+            <p>Спасибо, что выбрали <strong>Champion Gym</strong>!</p>
+            
+            <div class="confirmation-details">
+                <p>Вы выбрали тариф: <strong id="selectedPlanName">Разовое посещение</strong></p>
+                <p>Стоимость: <strong id="selectedPlanPrice">10 руб.</strong></p>
+                <p>Дата оформления: <strong id="purchaseDate">сегодня</strong></p>
+            </div>
+            
+            <p>Наш менеджер свяжется с вами в течение <strong>15 минут</strong> для подтверждения заказа и предоставления доступа в зал.</p>
+            
+            <div class="modal-success-message">
+                <i class="fas fa-check-circle"></i>
+                <span>Заказ успешно оформлен!</span>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="modal-button secondary" id="closeModalBtn">Продолжить выбор</button>
+                <button class="modal-button primary" id="confirmPurchaseBtn">Оплатить сейчас</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Purchase button functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -1270,31 +1513,85 @@
             const modal = document.getElementById('purchaseModal');
             const closeModal = document.querySelector('.close-modal');
             const closeModalBtn = document.getElementById('closeModalBtn');
-            const selectedPlan = document.getElementById('selectedPlan');
+            const confirmPurchaseBtn = document.getElementById('confirmPurchaseBtn');
+            const selectedPlanName = document.getElementById('selectedPlanName');
+            const selectedPlanPrice = document.getElementById('selectedPlanPrice');
+            const purchaseDate = document.getElementById('purchaseDate');
+            
+            // Format current date
+            function formatDate() {
+                const now = new Date();
+                const options = { 
+                    day: 'numeric', 
+                    month: 'long', 
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                };
+                return now.toLocaleDateString('ru-RU', options);
+            }
             
             // Add click event to each buy button
             buyButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const plan = this.getAttribute('data-plan');
-                    selectedPlan.textContent = plan;
+                    const price = this.getAttribute('data-price');
+                    
+                    selectedPlanName.textContent = plan;
+                    selectedPlanPrice.textContent = price;
+                    purchaseDate.textContent = formatDate();
+                    
+                    // Show modal with animation
                     modal.style.display = 'flex';
+                    setTimeout(() => {
+                        modal.classList.add('show');
+                    }, 10);
+                    
+                    // Prevent body scrolling when modal is open
+                    document.body.style.overflow = 'hidden';
                 });
             });
             
+            // Function to close modal
+            function closeModalFunction() {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+            
             // Close modal when X is clicked
-            closeModal.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
+            closeModal.addEventListener('click', closeModalFunction);
             
             // Close modal when continue button is clicked
-            closeModalBtn.addEventListener('click', function() {
-                modal.style.display = 'none';
+            closeModalBtn.addEventListener('click', closeModalFunction);
+            
+            // Confirm purchase button
+            confirmPurchaseBtn.addEventListener('click', function() {
+                const planName = selectedPlanName.textContent;
+                const planPrice = selectedPlanPrice.textContent;
+                
+                // Change modal content to show payment confirmation
+                document.querySelector('.modal-content h3').textContent = 'Оплата принята!';
+                document.querySelector('.modal-content p').innerHTML = `Вы успешно оплатили тариф <strong>${planName}</strong> на сумму <strong>${planPrice}</strong>.`;
+                document.querySelector('.confirmation-details').style.display = 'none';
+                document.querySelector('.modal-success-message').innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <span>Оплата прошла успешно! Доступ к залу активирован.</span>
+                `;
+                document.querySelector('.modal-actions').innerHTML = `
+                    <button class="modal-button primary" id="finishBtn">Завершить</button>
+                `;
+                
+                // Add event listener to finish button
+                document.getElementById('finishBtn').addEventListener('click', closeModalFunction);
             });
             
             // Close modal when clicking outside of it
-            window.addEventListener('click', function(event) {
+            modal.addEventListener('click', function(event) {
                 if (event.target === modal) {
-                    modal.style.display = 'none';
+                    closeModalFunction();
                 }
             });
             
@@ -1307,6 +1604,11 @@
                     if (targetId.startsWith('#')) {
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
+                            // Close modal if it's open
+                            if (modal.classList.contains('show')) {
+                                closeModalFunction();
+                            }
+                            
                             window.scrollTo({
                                 top: targetElement.offsetTop - 80,
                                 behavior: 'smooth'
@@ -1354,8 +1656,15 @@
                     stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
                 }, 30);
             });
+            
+            // Prevent scrolling with keyboard when modal is open
+            document.addEventListener('keydown', function(e) {
+                if (modal.classList.contains('show') && 
+                    (e.key === 'Escape' || e.key === 'Esc')) {
+                    closeModalFunction();
+                }
+            });
         });
     </script>
 </body>
 </html>
-
