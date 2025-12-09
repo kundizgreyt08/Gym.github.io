@@ -280,6 +280,113 @@
             background-color: var(--accent);
         }
 
+        /* History & Goals Section */
+        .history-goals {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .history-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .goals-list {
+            list-style: none;
+        }
+
+        .goals-list li {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .goals-list h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            border: 3px solid var(--secondary);
+        }
+
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .review-rating {
+            color: var(--warning);
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+        }
+
         /* Features Section */
         .features {
             padding: 5rem 0;
@@ -428,6 +535,11 @@
             .hero h2 {
                 font-size: 2.8rem;
             }
+            
+            .history-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -446,6 +558,11 @@
             
             .hero p {
                 font-size: 1.2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
 
@@ -481,7 +598,9 @@
             <nav>
                 <ul>
                     <li><a href="#home">Главная</a></li>
+                    <li><a href="#history">История</a></li>
                     <li><a href="#pricing">Цены</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
                     <li><a href="#features">Преимущества</a></li>
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
@@ -495,6 +614,47 @@
             <h2>Тренируйся как Чемпион</h2>
             <p>Добро пожаловать в Champion Gym, где фитнес встречается с совершенством. Наши современные залы и опытные тренеры помогут вам достичь ваших фитнес-целей.</p>
             <a href="#pricing" class="cta-button">Смотреть тарифы</a>
+        </div>
+    </section>
+
+    <!-- History & Goals Section -->
+    <section class="history-goals" id="history">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наша история и цели</h2>
+                <p>Узнайте, как мы создавали пространство для чемпионов и куда стремимся дальше</p>
+            </div>
+            
+            <div class="history-content">
+                <div class="history-text">
+                    <h3>История создания Champion Gym</h3>
+                    <p>Champion Gym был основан в 2010 году бывшим профессиональным атлетом Александром Волковым. После завершения спортивной карьеры, Александр понял, что в нашем городе не хватает качественного фитнес-пространства, где каждый мог бы почувствовать себя чемпионом, независимо от уровня подготовки.</p>
+                    <p>Начиная с небольшого зала площадью 200 м², мы постепенно расширялись, добавляя новое оборудование и привлекая лучших тренеров. В 2015 году мы открыли второй этаж с кардио-зоной, а в 2018 году полностью обновили все оборудование, закупив технику от мировых лидеров фитнес-индустрии.</p>
+                    <p>Сегодня Champion Gym - это два современных зала общей площадью 800 м², где тренируются более 1000 постоянных клиентов. Мы гордимся тем, что за 13 лет помогли тысячам людей изменить свою жизнь к лучшему.</p>
+                </div>
+                
+                <div class="goals-section">
+                    <h3>Наши цели и миссия</h3>
+                    <ul class="goals-list">
+                        <li>
+                            <h4>Доступность фитнеса для всех</h4>
+                            <p>Мы стремимся сделать качественные тренировки доступными для людей с разным уровнем дохода, предлагая гибкие тарифы и акции.</p>
+                        </li>
+                        <li>
+                            <h4>Создание комьюнити чемпионов</h4>
+                            <p>Наша цель - не просто зал, а сообщество единомышленников, где каждый поддерживает друг друга на пути к цели.</p>
+                        </li>
+                        <li>
+                            <h4>Инновации в тренировках</h4>
+                            <p>Мы постоянно следим за трендами в фитнес-индустрии и внедряем новые методики тренировок для максимальной эффективности.</p>
+                        </li>
+                        <li>
+                            <h4>Расширение пространства</h4>
+                            <p>В планах на ближайшие 2 года - открытие бассейна и зоны кроссфита, чтобы предоставить клиентам еще больше возможностей.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -579,6 +739,90 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы наших клиентов</h2>
+                <p>Что говорят те, кто уже тренируется в Champion Gym</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Алексей Петров">
+                        </div>
+                        <div class="review-info">
+                            <h4>Алексей Петров</h4>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                            <p>Тренируется 2 года</p>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        <p>"Занимаюсь в Champion Gym уже более двух лет. Начал с нуля, с лишним весом в 25 кг. Благодаря персональному тренеру и отличному оборудованию не только похудел, но и набрал мышечную массу. Атмосфера в зале всегда дружеская, персонал внимательный. Особенно нравится система вентиляции - даже в часы пик дышится легко!"</p>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Мария Смирнова">
+                        </div>
+                        <div class="review-info">
+                            <h4>Мария Смирнова</h4>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                            <p>Тренируется 1 год</p>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        <p>"Пришла в Champion Gym после рождения ребенка, чтобы восстановить форму. Групповые занятия по пилатесу и йоге просто потрясающие! Тренер Анна индивидуально подобрала программу с учетом моих особенностей. За 8 месяцев сбросила 15 кг, укрепила мышцы и улучшила осанку. Чистота в зале безупречная, всегда свежие полотенца и приятная музыка."</p>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Дмитрий Иванов">
+                        </div>
+                        <div class="review-info">
+                            <h4>Дмитрий Иванов</h4>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5</span>
+                            </div>
+                            <p>Тренируется 3 года</p>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        <p>"Как опытный спортсмен могу сказать, что Champion Gym - один из лучших залов в городе. Оборудование постоянно обновляется, есть все необходимое для силовых и функциональных тренировок. Особенно ценю наличие тяжелых гантелей и олимпийских блинов. Персонал всегда готов помочь, тренеры квалифицированные. Единственное - в вечерние часы бывает многовато людей, но это говорит о популярности зала!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
@@ -628,9 +872,10 @@
                     <h3>Быстрые ссылки</h3>
                     <ul>
                         <li><a href="#home">Главная</a></li>
+                        <li><a href="#history">История</a></li>
                         <li><a href="#pricing">Цены</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
                         <li><a href="#features">Преимущества</a></li>
-                        <li><a href="#contact">Контакты</a></li>
                     </ul>
                 </div>
                 
@@ -716,14 +961,14 @@
                     e.preventDefault();
                     
                     const targetId = this.getAttribute('href');
-                    if (targetId === '#home' || targetId === '#pricing' || 
-                        targetId === '#features' || targetId === '#contact') {
-                        
+                    if (targetId.startsWith('#')) {
                         const targetElement = document.querySelector(targetId);
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
@@ -744,7 +989,7 @@
             }, observerOptions);
             
             // Observe pricing cards
-            document.querySelectorAll('.pricing-card').forEach(card => {
+            document.querySelectorAll('.pricing-card, .review-card, .feature-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.5s, transform 0.5s';
