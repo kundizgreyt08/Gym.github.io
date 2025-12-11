@@ -109,6 +109,24 @@
             width: 100%;
         }
 
+        /* Registration Counter in Header */
+        .registration-counter {
+            background-color: var(--secondary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 3px 8px rgba(255, 102, 0, 0.3);
+        }
+
+        .registration-counter i {
+            font-size: 1rem;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
@@ -152,6 +170,165 @@
             background-color: #e65c00;
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Registration Section */
+        .registration {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #3a3a8a 100%);
+            color: white;
+            position: relative;
+        }
+
+        .registration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+
+        .registration-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .registration-info h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .registration-info p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .registration-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .registration-stat {
+            text-align: center;
+        }
+
+        .registration-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .registration-stat .label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .registration-form {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .registration-form h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e1e5eb;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(42, 42, 114, 0.1);
+        }
+
+        .form-group input.error {
+            border-color: #dc3545;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--secondary), #e65c00);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(40, 167, 69, 0.1);
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .form-success i {
+            color: var(--success);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-success p {
+            color: var(--success);
+            font-weight: 600;
+            font-size: 1.2rem;
         }
 
         /* History & Goals Section */
@@ -768,7 +945,7 @@
             font-size: 1rem;
         }
 
-        /* Purchase Modal Styles - Уменьшенный размер */
+        /* Purchase Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -958,6 +1135,10 @@
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .registration-content {
+                gap: 3rem;
+            }
         }
 
         @media (max-width: 992px) {
@@ -981,6 +1162,15 @@
             .history-text h3,
             .goals-section h3 {
                 font-size: 2rem;
+            }
+            
+            .registration-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .registration-info h2 {
+                font-size: 2.3rem;
             }
         }
 
@@ -1044,6 +1234,10 @@
             
             .stat-card {
                 padding: 1.5rem;
+            }
+            
+            .registration-form {
+                padding: 2rem;
             }
             
             .modal-content {
@@ -1112,6 +1306,19 @@
                 height: 70px;
             }
             
+            .registration-form {
+                padding: 1.5rem;
+            }
+            
+            .registration-info h2 {
+                font-size: 1.8rem;
+            }
+            
+            .registration-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
             .modal-content {
                 padding: 1.5rem;
             }
@@ -1143,6 +1350,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Главная</a></li>
+                    <li><a href="#registration">Регистрация</a></li>
                     <li><a href="#history">История</a></li>
                     <li><a href="#pricing">Цены</a></li>
                     <li><a href="#reviews">Отзывы</a></li>
@@ -1150,6 +1358,10 @@
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="registration-counter">
+                <i class="fas fa-user-plus"></i>
+                <span id="totalUsers">0</span>
+            </div>
         </div>
     </header>
 
@@ -1158,7 +1370,64 @@
         <div class="container">
             <h2>Тренируйся как Чемпион</h2>
             <p>Добро пожаловать в Champion Gym, где фитнес встречается с совершенством. Наши современные залы и опытные тренеры помогут вам достичь ваших фитнес-целей.</p>
-            <a href="#pricing" class="cta-button">Смотреть тарифы</a>
+            <a href="#registration" class="cta-button">Зарегистрироваться</a>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration" id="registration">
+        <div class="container">
+            <div class="registration-content">
+                <div class="registration-info">
+                    <h2>Присоединяйтесь к сообществу Champion Gym</h2>
+                    <p>Зарегистрируйтесь сейчас и получите персональную консультацию тренера БЕСПЛАТНО! Узнайте о наших специальных предложениях и станьте частью команды чемпионов.</p>
+                    
+                    <div class="registration-stats">
+                        <div class="registration-stat">
+                            <span class="number" id="registeredToday">0</span>
+                            <span class="label">Зарегистрировалось сегодня</span>
+                        </div>
+                        <div class="registration-stat">
+                            <span class="number" id="registeredWeek">0</span>
+                            <span class="label">На этой неделе</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="registration-form">
+                    <h3>Регистрация</h3>
+                    <form id="registrationForm" method="POST">
+                        <div class="form-group">
+                            <label for="fullName">ФИО *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Иванов Иван Иванович" required>
+                            <div class="error-message" id="nameError">Пожалуйста, введите полное ФИО</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Номер телефона *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+375 (29) 123-45-67" required>
+                            <div class="error-message" id="phoneError">Пожалуйста, введите корректный номер телефона</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email (необязательно)</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com">
+                        </div>
+                        
+                        <button type="submit" class="submit-button" id="submitBtn">
+                            <span id="submitText">Зарегистрироваться</span>
+                            <span id="loadingText" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Отправка...
+                            </span>
+                        </button>
+                        
+                        <div class="form-success" id="successMessage">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Регистрация успешно завершена! Мы свяжемся с вами в ближайшее время.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1452,6 +1721,7 @@
                     <h3>Быстрые ссылки</h3>
                     <ul>
                         <li><a href="#home"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="#registration"><i class="fas fa-user-plus"></i> Регистрация</a></li>
                         <li><a href="#history"><i class="fas fa-history"></i> История</a></li>
                         <li><a href="#pricing"><i class="fas fa-tags"></i> Цены</a></li>
                         <li><a href="#reviews"><i class="fas fa-comments"></i> Отзывы</a></li>
@@ -1515,6 +1785,189 @@
     </div>
 
     <script>
+        // User Registration System
+        class UserRegistration {
+            constructor() {
+                this.storageKey = 'championGymUsers';
+                this.initialize();
+            }
+            
+            initialize() {
+                this.loadUsers();
+                this.updateCounters();
+                this.setupForm();
+            }
+            
+            loadUsers() {
+                const usersJson = localStorage.getItem(this.storageKey);
+                this.users = usersJson ? JSON.parse(usersJson) : [];
+            }
+            
+            saveUsers() {
+                localStorage.setItem(this.storageKey, JSON.stringify(this.users));
+            }
+            
+            registerUser(userData) {
+                const newUser = {
+                    ...userData,
+                    id: Date.now(),
+                    registrationDate: new Date().toISOString(),
+                    status: 'active'
+                };
+                
+                this.users.push(newUser);
+                this.saveUsers();
+                this.updateCounters();
+                return newUser;
+            }
+            
+            getUsersCount() {
+                return this.users.length;
+            }
+            
+            getTodayUsersCount() {
+                const today = new Date().toDateString();
+                return this.users.filter(user => {
+                    const userDate = new Date(user.registrationDate).toDateString();
+                    return userDate === today;
+                }).length;
+            }
+            
+            getWeekUsersCount() {
+                const weekAgo = new Date();
+                weekAgo.setDate(weekAgo.getDate() - 7);
+                
+                return this.users.filter(user => {
+                    const userDate = new Date(user.registrationDate);
+                    return userDate >= weekAgo;
+                }).length;
+            }
+            
+            updateCounters() {
+                // Update header counter
+                document.getElementById('totalUsers').textContent = this.getUsersCount();
+                
+                // Update registration section counters
+                document.getElementById('registeredToday').textContent = this.getTodayUsersCount();
+                document.getElementById('registeredWeek').textContent = this.getWeekUsersCount();
+            }
+            
+            setupForm() {
+                const form = document.getElementById('registrationForm');
+                const submitBtn = document.getElementById('submitBtn');
+                const submitText = document.getElementById('submitText');
+                const loadingText = document.getElementById('loadingText');
+                const successMessage = document.getElementById('successMessage');
+                
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    // Validate form
+                    if (!this.validateForm()) {
+                        return;
+                    }
+                    
+                    // Get form data
+                    const formData = new FormData(form);
+                    const userData = {
+                        fullName: formData.get('fullName'),
+                        phone: formData.get('phone'),
+                        email: formData.get('email') || null
+                    };
+                    
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitText.style.display = 'none';
+                    loadingText.style.display = 'inline';
+                    
+                    try {
+                        // Simulate POST request delay
+                        await this.simulatePostRequest(userData);
+                        
+                        // Register user locally
+                        this.registerUser(userData);
+                        
+                        // Show success message
+                        successMessage.style.display = 'block';
+                        form.reset();
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 5000);
+                        
+                    } catch (error) {
+                        alert('Произошла ошибка при регистрации. Пожалуйста, попробуйте еще раз.');
+                    } finally {
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitText.style.display = 'inline';
+                        loadingText.style.display = 'none';
+                    }
+                });
+            }
+            
+            validateForm() {
+                const fullName = document.getElementById('fullName');
+                const phone = document.getElementById('phone');
+                const nameError = document.getElementById('nameError');
+                const phoneError = document.getElementById('phoneError');
+                
+                let isValid = true;
+                
+                // Reset errors
+                nameError.style.display = 'none';
+                phoneError.style.display = 'none';
+                fullName.classList.remove('error');
+                phone.classList.remove('error');
+                
+                // Validate full name
+                if (!fullName.value.trim() || fullName.value.trim().split(' ').length < 2) {
+                    fullName.classList.add('error');
+                    nameError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validate phone (simple validation)
+                const phoneRegex = /^[\+]?[375]?[\s]?[\(]?[0-9]{2}[\)]?[\s]?[0-9]{3}[\s]?[0-9]{2}[\s]?[0-9]{2}$/;
+                if (!phone.value.trim() || !phoneRegex.test(phone.value.replace(/[\s\-\(\)]/g, ''))) {
+                    phone.classList.add('error');
+                    phoneError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            simulatePostRequest(userData) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        // In a real application, this would be an actual POST request
+                        // fetch('/api/register', {
+                        //     method: 'POST',
+                        //     headers: {
+                        //         'Content-Type': 'application/json',
+                        //     },
+                        //     body: JSON.stringify(userData)
+                        // })
+                        
+                        // For demo purposes, we simulate a successful request
+                        const isSuccess = Math.random() > 0.1; // 90% success rate for demo
+                        
+                        if (isSuccess) {
+                            console.log('POST request simulated:', userData);
+                            resolve({ success: true, data: userData });
+                        } else {
+                            reject(new Error('Simulated network error'));
+                        }
+                    }, 1500); // Simulate network delay
+                });
+            }
+        }
+        
+        // Initialize registration system
+        const userRegistration = new UserRegistration();
+        
         // Purchase button functionality
         document.addEventListener('DOMContentLoaded', function() {
             const buyButtons = document.querySelectorAll('.buy-button');
