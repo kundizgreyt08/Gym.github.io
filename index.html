@@ -731,72 +731,17 @@
                 </div>
                 <div class="hero-image">
                     <!-- Используем несколько вариантов на случай если один не загрузится -->
-                  <div class="hero-image">
-    <!-- SVG графика - человечек, который занимается спортом -->
-    <div class="fitness-svg">
-        <svg width="100%" height="450" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
-            <!-- Фон -->
-            <rect width="600" height="450" fill="#f5f7ff" rx="20"/>
-            
-            <!-- Голова -->
-            <circle cx="300" cy="120" r="40" fill="#4361ee"/>
-            
-            <!-- Тело -->
-            <line x1="300" y1="160" x2="300" y2="280" stroke="#4361ee" stroke-width="10" stroke-linecap="round"/>
-            
-            <!-- Руки (поднимает гантель) -->
-            <line x1="300" y1="180" x2="230" y2="130" stroke="#4361ee" stroke-width="8" stroke-linecap="round"/>
-            <line x1="300" y1="180" x2="370" y2="130" stroke="#4361ee" stroke-width="8" stroke-linecap="round"/>
-            
-            <!-- Гантель в левой руке -->
-            <circle cx="230" cy="130" r="15" fill="#f72585"/>
-            <line x1="215" y1="130" x2="190" y2="130" stroke="#f72585" stroke-width="6" stroke-linecap="round"/>
-            <circle cx="185" cy="130" r="12" fill="#f72585"/>
-            
-            <!-- Гантель в правой руке -->
-            <circle cx="370" cy="130" r="15" fill="#4cc9f0"/>
-            <line x1="385" y1="130" x2="410" y2="130" stroke="#4cc9f0" stroke-width="6" stroke-linecap="round"/>
-            <circle cx="415" cy="130" r="12" fill="#4cc9f0"/>
-            
-            <!-- Ноги (в движении) -->
-            <line x1="300" y1="280" x2="250" y2="380" stroke="#4361ee" stroke-width="10" stroke-linecap="round"/>
-            <line x1="300" y1="280" x2="350" y2="380" stroke="#4361ee" stroke-width="10" stroke-linecap="round"/>
-            
-            <!-- Стопы -->
-            <line x1="250" y1="380" x2="230" y2="400" stroke="#4361ee" stroke-width="8" stroke-linecap="round"/>
-            <line x1="350" y1="380" x2="370" y2="400" stroke="#4361ee" stroke-width="8" stroke-linecap="round"/>
-            
-            <!-- Анимационные линии (энергия) -->
-            <circle cx="300" cy="120" r="50" fill="none" stroke="#4895ef" stroke-width="2" stroke-dasharray="5,5" opacity="0.6">
-                <animate attributeName="r" values="50;60;50" dur="2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2s" repeatCount="indefinite"/>
-            </circle>
-            
-            <!-- Пол -->
-            <line x1="100" y1="400" x2="500" y2="400" stroke="#e0e7ff" stroke-width="4" stroke-linecap="round"/>
-            
-            <!-- Декоративные элементы -->
-            <circle cx="100" cy="250" r="20" fill="#f72585" opacity="0.2"/>
-            <circle cx="500" cy="200" r="25" fill="#4cc9f0" opacity="0.2"/>
-            <circle cx="150" cy="150" r="15" fill="#4895ef" opacity="0.2"/>
-            <circle cx="450" cy="300" r="18" fill="#f72585" opacity="0.2"/>
-            
-            <!-- Текст -->
-            <text x="300" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6c757d">
-                Твой персональный фитнес-путь
-            </text>
-        </svg>
+                  <img 
+    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+    alt="Люди тренируются в светлом фитнес-зале"
+    onerror="this.style.display='none'; document.getElementById('imagePlaceholder').style.display='flex';"
+>
+                      <!-- Запасной вариант если картинка не загрузится -->
+    <div class="image-placeholder" id="imagePlaceholder" style="display: none;">
+        <i class="fas fa-dumbbell"></i>
+        <span>Твой путь к идеальной форме</span>
     </div>
 </div>
-                    <!-- Запасной вариант если картинка не загрузится -->
-                    <div class="image-placeholder" id="imagePlaceholder" style="display: none;">
-                        <i class="fas fa-dumbbell"></i>
-                        <span>Твой путь к идеальной форме</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Questionnaire Section -->
     <section class="questionnaire" id="questionnaire">
@@ -1414,6 +1359,7 @@
     </script>
 </body>
 </html>
+
 
 
 
